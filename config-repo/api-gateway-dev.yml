@@ -1,0 +1,17 @@
+zuul:
+  sensitive-headers: 
+  routes:
+  # /myProduct/product/list -> /product/product/list
+    aaaaaa:
+      path: /myProduct/**
+      serviceId: product
+      sensitiveHeaders:
+#    product: /myProduct/**
+  ignored-patterns:
+    - /**/product/listForOrder 
+management:
+  security:
+    enabled: false    
+ribbon:
+  ReadTimeout: 5000
+  SocketTimeout: 5000
